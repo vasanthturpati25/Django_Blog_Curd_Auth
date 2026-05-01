@@ -15,7 +15,6 @@ A fully functional **Blog Web Application** built using Django, implementing com
 - Reusable templates using inheritance
 - Secure form handling with CSRF protection
 - User feedback using Django messages framework
-- Clean and responsive user interface
 
 
 ## 🛠️ Tech Stack
