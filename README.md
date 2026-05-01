@@ -2,7 +2,6 @@
 
 A fully functional **Blog Web Application** built using Django, implementing complete CRUD operations along with **user authentication and authorization**.
 
----
 
 ## 🚀 Features
 
@@ -18,7 +17,6 @@ A fully functional **Blog Web Application** built using Django, implementing com
 * User feedback using Django messages framework
 * Clean and responsive user interface
 
----
 
 ## 🛠️ Tech Stack
 
@@ -28,7 +26,6 @@ A fully functional **Blog Web Application** built using Django, implementing com
 * CSS3
 * SQLite
 
----
 
 ## 📚 What I Learned
 
@@ -47,7 +44,6 @@ A fully functional **Blog Web Application** built using Django, implementing com
 * Using Django messages framework for feedback
 * Redirecting users after actions
 
----
 
 ## 🔐 Authentication & Authorization
 
@@ -57,7 +53,6 @@ A fully functional **Blog Web Application** built using Django, implementing com
   * Edit the post
   * Delete the post
 
----
 
 ## 🎯 CRUD Operations
 
@@ -66,7 +61,6 @@ A fully functional **Blog Web Application** built using Django, implementing com
 * ✏️ Update Post (owner only)
 * ❌ Delete Post (owner only)
 
----
 
 ## ⚙️ Setup Instructions
 
