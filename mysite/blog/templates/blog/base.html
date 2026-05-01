@@ -1,37 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{% block title %}My Blog{% endblock %}</title>
+<title>{% block title %}My Blog{% endblock %}</title>
 </head>
 
 <style>
 body {
     font-family: Arial;
-    background: #f4f4f4;
+    background:#f4f4f4;
     margin:0;
 }
 
-/* ✅ Apply flex here */
 nav {
     background:#333;
     color:white;
-    padding:10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding:10px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
-/* optional logo */
-nav .logo {
-    font-weight: bold;
-    font-size: 18px;
+.logo {
+    font-size:20px;
 }
 
-/* links container */
-nav .links a {
+.center-text {
+    flex: 1;
+    text-align: center;
+    font-size:16px;
+}
+
+.links {
+    display:flex;
+    align-items:center;
+}
+
+.links a {
     color:white;
     margin-left:15px;
     text-decoration:none;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+.username {
+    font-weight:bold;
+    color:#ffd700;
 }
 
 .container {
@@ -47,22 +63,36 @@ nav .links a {
 <nav>
     <div class="logo">My Blog</div>
 
+    <div class="center-text">
+        {% if user.is_authenticated %}
+            Welcome, <span class="username">{{ user.username }}</span>
+        {% else %}
+            Welcome to My Blog
+        {% endif %}
+    </div>
+
     <div class="links">
         <a href="{% url 'home' %}">Home</a>
         <a href="{% url 'about' %}">About</a>
-        <a href="{% url 'create_post' %}">Create Post</a>
+
+        {% if user.is_authenticated %}
+            <a href="{% url 'create_post' %}">Create</a>
+            <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'register' %}">Register</a>
+        {% endif %}
     </div>
 </nav>
 
 <div class="container">
 
-    {% if messages %}
-        {% for message in messages %}
-            <p>{{ message }}</p>
-        {% endfor %}
-    {% endif %}
+{% for message in messages %}
+<p>{{ message }}</p>
+{% endfor %}
 
-    {% block content %}{% endblock %}
+{% block content %}{% endblock %}
+
 </div>
 
 </body>
